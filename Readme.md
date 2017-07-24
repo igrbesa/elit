@@ -1,19 +1,11 @@
-# Budgeting :: A Modern React, Redux, React Router 4, Webpack Sample App
+# Blog : Made using React, Redux, React Router 4, Webpack Sample App
 
 ![React, Redux, Router, Webpack, Sass](https://cloud.githubusercontent.com/assets/733074/25338311/193a1a40-28ff-11e7-8f22-9a5d9dac7b84.png)
 
-Architected as if it were a large mission-critical application, this sample app demonstrates the power and simplicity of React, Redux, React Router, and Webpack 2. Includes tree shaking configuration.
 
-[See live demo](https://budgeting-a937b.firebaseapp.com/).
-
-![React Budgeting App](https://cloud.githubusercontent.com/assets/733074/25340900/6ab1d536-2907-11e7-8083-b78f8ae601b4.png)
-
-## Budgeting Application
-The is a simple budget management application. It tracks inflow and outflow, shows remaining budget, and interesting reports with charts. As such, it offers more features than the usual Todo App. 
-
-Budgeting app is a showcase project that demonstrates important decisions in architecture and development of a modern React application.
-
-Feel free to use it as a reference app or a starter kit.
+## Blog Application
+This is forked from [Budgeting app](https://github.com/ModusCreateOrg/budgeting-sample-app-webpack2)
+. It is free to use it as a reference app or a starter kit.
 
 ## Key concepts:
 
@@ -24,20 +16,6 @@ Feel free to use it as a reference app or a starter kit.
 - [x] CSS modules
 - [x] Performance budgets in Webpack 2
 
-## Performance
-![Budgeting App Performance](https://cloud.githubusercontent.com/assets/733074/25339194/1af94448-2902-11e7-8982-c1a9b647fac0.png)
-_The app loads in 1 second on 3G, cache disabled_
-
-Budgeting app is **blazing fast**, thanks to the smart architecture and Webpack 2 configuration. It takes about 1000ms (1s) to load on 3G (see above).
-
-![Alex Russel Test](https://cloud.githubusercontent.com/assets/733074/25586449/acf14628-2e9f-11e7-8839-2f7c20809581.png)
-_Emerging Markets 3G Filmstrip_
-
-The [aggressive test](https://www.webpagetest.org/video/compare.php?tests=170501_0S_XQ5-r:2-c:0) above shows the budgeting app loads in under 5 seconds. It's a heavily limited connection that accounts for poor connectivity and limited bandwidth. 
-
-![Waterfall](https://cloud.githubusercontent.com/assets/733074/25586623/676a378a-2ea0-11e7-9342-c040751b6ec6.png)
-
-All important (aka critical path) assets are loaded as early as possible, while the others (e.g. images or GitHub buttons) will load after the first render.
 
 #### How did we get that performance?
 
@@ -47,25 +25,7 @@ All important (aka critical path) assets are loaded as early as possible, while 
 4. **H2 Push.** The app is hosted on Firebase and we use the magic of _HTTP2 Push_ to push some of the scripts before they are requested.
 5. **Pre-caching**. Service Workers pre-cache resources so the browser can access them as soon as the user needs to.
 
-## Charts
-Charts are developed using the awesome D3 library. The idea behind showing charts is not only to show beautiful content, but also to demonstrate keeping heavy content in a chunk that owns it. In other words - we show how applications can run fast even if they use larger libraries.
 
-D3 is used in the `/reports` route only. Given that major routes are separate chunks (code splitting FTW!), the entire D3 library is bundled with the code that needs it. That makes the `/reports` route a bit heavier than the initial `/budget` route, but it also makes routes much faster to load.
-
-## Performance Budgets
-We are looking to maintain the lightest possible application core (_aka entry chunk_). Our target is 300kB for the entrypoint and 300kB for all other assets. This is how we set it in [webpack configuration](https://github.com/ModusCreateOrg/budgeting-sample-app-webpack2/blob/master/webpack.config.js):
-
-```js
-performance: {
-  maxAssetSize: 300000,
-  maxEntrypointSize: 300000,
-  hints: 'warning',
-},
-```
-
-Adding lots of extra code to the entry chunk might cause the build (`yarn run build`) process to show a warning.
-
-![Performance Budgets](https://cloud.githubusercontent.com/assets/733074/25352700/3ade5cfa-292d-11e7-8d2e-fed88c2c4da0.png)
 
 _Simulated size warning_
 
@@ -132,14 +92,6 @@ Similar to Yarn, really...
 * `npm run serve` - serve previously built app using pushstate server
 * `npm run lint` - lint check
 * `npm run lint:fix` - lint check + autofixes + prettify code with __prettier__
-
-## Honorary Mentions
-
-* Thanks to [React experts at Modus Create](https://moduscreate.com) for the infinite amounts of experience poured into this app
-* Kudos to [Andrea Grisogono](https://twitter.com/scrumolina) who Scrumorganized the team
-* Thanks to community contributors who helped with code and screamed about issues. Yeah, we really do appreciate all the screaming. 
-* [Addy Osmani](https://twitter.com/addyosmani) and [Sam Saccone](https://twitter.com/samccone) who helped with the PRPL pattern
-* [Sean T Larkin](https://twitter.com/thelarkinn) who helped with Webpack wizardry
 
 ## Want more?
 This project is maintained by [Modus Create](https://moduscreate.com). Fantastic React apps are in our DNA so give us a buzz if we can help with your awesome project.
