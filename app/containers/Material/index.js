@@ -4,6 +4,7 @@ import categoryReducer from 'modules/categories';
 import { injectAsyncReducers } from 'store';
 import BudgetGrid from 'components/BudgetGrid';
 import Balance from 'containers/Balance';
+import { Route, Link } from 'react-router-dom';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -39,7 +40,8 @@ const MaterialContainer = () => (
             border: '2px solid #FF9800',
             backgroundColor: '#ffd699',
         }} /> */}
-        <AppBar title="My AppBar" />
+         <AppBar title="My AppBar" /> 
+        {/* <Link to='budget'>fsdf</Link> */}
     </MuiThemeProvider>
 );
 
