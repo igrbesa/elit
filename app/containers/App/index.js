@@ -3,6 +3,10 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import Header from 'components/Header';
+import Registration from 'routes/Registration';
+import Designer from 'routes/Designer';
+import Client from 'routes/Client';
+
 // import Budget from 'routes/Budget';
 // import Reports from 'routes/Reports';
 // import Material from 'routes/Material';
@@ -13,16 +17,23 @@ injectTapEventPlugin();
 
 const App = () => (
   <MuiThemeProvider>
-    {/* <main> */}
-    <Header />
+    <main>
+      <Header />
+      <Switch>
+        <Route path="/registration" component={Registration} />
+        <Route path="/designer" component={Designer} />
+        <Route path="/category/:catergoryId?" component={Client} />
+        <Route path="/" exact component={Client} />
+        <Redirect to="/category" />
+      </Switch>
 
-    {/* <Switch>
+      {/* <Switch>
       <Route path="/budget" component={Budget} />
       <Route path="/reports" component={Reports} />
       <Route path="/material" component={Material} />
       <Redirect to="/budget" />
     </Switch> */}
-    {/* </main> */}
+    </main>
   </MuiThemeProvider>
 );
 
