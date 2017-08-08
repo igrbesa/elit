@@ -12,8 +12,9 @@ import Client from 'routes/Client';
 // import Material from 'routes/Material';
 import './style.scss';
 
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
+//TODO: delete, not used in new version
+// import injectTapEventPlugin from 'react-tap-event-plugin';
+// injectTapEventPlugin();
 
 const App = () => (
   <MuiThemeProvider>
