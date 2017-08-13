@@ -6,16 +6,28 @@ import NavLink from 'components/NavLink';
 // import styles from './style.scss';
 import AppBar from 'material-ui/AppBar';
 import FlatButton from 'material-ui/Button';
-import Toolbar from 'material-ui/Toolbar'
+import Toolbar from 'material-ui/Toolbar';
+import IconButton from 'material-ui/IconButton';
+import MoreVertIcon from 'material-ui-icons/MoreVert';
+import MenuIcon from 'material-ui-icons/Menu';
+import Menu, { MenuItem } from 'material-ui/Menu';
+import Typography from 'material-ui/Typography';
 import { Route, Link } from 'react-router-dom';
 import { withStyles, createStyleSheet } from 'material-ui/styles';
 
 const styleSheet = createStyleSheet({
   root: {
     marginTop: 30,
-    width: '100%',
+    width: '100%'
   },
 });
+
+const options = [
+  'None',
+  'Atria',
+  'Callisto',
+  'Dione'
+];
 
 function header(props) {
 
@@ -29,7 +41,12 @@ function header(props) {
     <div className={classes.root}>
       <AppBar position="fixed" color="accent">
         <Toolbar>
-          <p>ovo je u toolbaru</p>
+          <IconButton color="contrast" aria-label="Menu">
+            <MenuIcon />
+          </IconButton>
+          <Typography type="title" color="inherit" className={classes.flex}>
+            Title
+          </Typography>
         </Toolbar>
       </AppBar>
     </div>
