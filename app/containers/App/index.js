@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import Header from 'components/Header';
+import Header from 'containers/Header';
 import Registration from 'routes/Registration';
 import Designer from 'routes/Designer';
 import Client from 'routes/Client';

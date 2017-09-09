@@ -14,6 +14,7 @@ import styles from './style.scss';
     addTransaction: actions.addTransaction,
   }
 )
+
 class EntryFormRow extends Component {
   static propTypes = {
     defaultCategoryId: PropTypes.string.isRequired,
